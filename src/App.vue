@@ -19,7 +19,7 @@
         </div>
 
         <div class="weather-box">
-          <p class="temp">{{ Math.round(weather.main.temp) }}</p>
+          <p class="temp">{{ Math.round(weather.main.temp) }}°</p>
           <em class="weather">{{ weather.weather[0].main }}</em>
         </div>
      </div>
@@ -56,7 +56,7 @@ export default {
       let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
       let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-      let day = days[d.getDay];
+      let day = days[d.getDay()];
       let date = d.getDate();
       let month = months[d.getMonth()];
       let year = d.getFullYear();
@@ -77,6 +77,7 @@ export default {
 
 body {
   font-family:'Montserrat', sans-serif;
+  background:aliceblue;
 }
 
 #app {
@@ -84,6 +85,8 @@ body {
   background-size:cover;
   background-position:bottom;
   transition:0.4s;
+  max-width:500px;
+  margin:0 auto;
 }
 
 #app.warm {
